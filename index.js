@@ -26,8 +26,10 @@ app.use((req, res, next) => {
 app.use((req, res) => res.status(404).json({ error: 'Not found' }));
 
 const PORT = process.env.PORT || 3000;
-if (process.env.VERCEL) {
-  module.exports = app;
-} else {
-  app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
-}
+// if (process.env.VERCEL) {
+//   module.exports = app;
+// } else {
+//   app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// }
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+module.exports = app;
