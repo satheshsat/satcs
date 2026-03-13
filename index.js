@@ -17,7 +17,8 @@ app.use('/api/jobs', jobsRoutes);
 
 // Serve static frontend
 const publicPath = path.join(__dirname, 'public');
-app.use(express.static(publicPath));
+// app.use(express.static(publicPath));
+app.use(express.static('public'));
 // Fallback: serve index.html for non-API GET (SPA-style routing)
 app.use((req, res, next) => {
   if (req.method !== 'GET' || req.path.startsWith('/api')) return next();
